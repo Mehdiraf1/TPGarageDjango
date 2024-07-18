@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+
+class Car(models.Model):
+    immatriculation = models.CharField()
+    marque = models.CharField()
+    modele = models.CharField()
+    etat = models.CharField()
+
