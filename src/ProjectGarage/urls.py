@@ -20,6 +20,7 @@ from django.urls import path, include
 
 from cars.views import CarsViewset
 
+# Ajout des routers
 router = routers.SimpleRouter()
 
 router.register('cars', CarsViewset, basename='cars')
