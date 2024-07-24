@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'ProjectGarage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Garage_Django',
+        'NAME': 'Garage_Django3',
         'USER': 'root',
         'PASSWORD': 'Mehdiraf10*',
         'HOST': 'localhost',
@@ -128,5 +128,14 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.DjangoModelPermissions',
+    ]
 }
+
+# Spécifier la classe à utiliser lors de la création d'utilisateur
+AUTH_USER_MODEL = 'cars.CustomUser'
